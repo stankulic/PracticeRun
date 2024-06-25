@@ -1,4 +1,5 @@
-/*import { test, chromium, firefox, expect } from "@playwright/test"; 
+import { test, chromium, firefox, expect } from "@playwright/test"; 
+import { login } from '../utilMethods/login'; 
 
 
 test(`Verify add to cart flow`,async () => { 
@@ -6,8 +7,9 @@ test(`Verify add to cart flow`,async () => {
    const browser = await chromium.launch({headless:false}); 
    const browserContext = await browser.newContext(); 
    const page = await browserContext.newPage(); 
-   await page.goto("https://www.saucedemo.com/"); 
-   const title = await page.title();
+
+   
+   login(page);
 
 
    await page.locator('[data-test="add-to-cart-sauce-labs-backpack"]').click();
@@ -23,4 +25,8 @@ test(`Verify add to cart flow`,async () => {
    await expect(page.locator('[data-test="remove-sauce-labs-backpack"]')).toBeVisible();
    await expect(page.locator('[data-test="remove-sauce-labs-bike-light"]')).toBeVisible();
    await expect(page.locator('[data-test="remove-sauce-labs-fleece-jacket"]')).toBeVisible();
-})*/
+
+
+
+   //remove the items
+})

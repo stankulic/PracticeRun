@@ -1,20 +1,16 @@
 import { test, chromium, firefox, expect } from "@playwright/test"; 
-import CheckoutData from "../tests/CheckoutData.json"
-import userCreds from "../playwright/.auth/credentials.json"
+import CheckoutData from "../testData/CheckoutData.json"
+
+import { login } from '../utilMethods/login'; 
 
 test(`Verify checkout flow`,async () => { 
 
    const browser = await chromium.launch({headless:false}); 
    const browserContext = await browser.newContext(); 
    const page = await browserContext.newPage(); 
-   await page.goto("https://www.saucedemo.com/"); 
-   const title = await page.title();       
- 
- //
-      await page.locator('[data-test="username"]').fill(userCreds.user_name);
-      await page.locator('[data-test="password"]').fill(userCreds.password);
-      await page.locator('[data-test="login-button"]').click();
-   //  
+
+   
+   login(page);
 
       
  
@@ -30,5 +26,7 @@ test(`Verify checkout flow`,async () => {
    await page.locator('[data-test="continue"]').click();
    await page.locator('[data-test="finish"]').click();
 
+   //verify "Thank you for your order!"
+   
    await page.locator('[data-test="pony-express"]').click();
 }) 
