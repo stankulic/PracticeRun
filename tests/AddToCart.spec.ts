@@ -28,5 +28,5 @@ test(`Verify add to cart flow`,async () => {
 
 
 
-   //remove the items
+   //remove the items from the cart
 })
