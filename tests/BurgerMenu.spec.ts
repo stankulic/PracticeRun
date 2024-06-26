@@ -7,7 +7,7 @@ import { logout } from "../utilMethods/logout";
 
 
 test(`Verify burger menu - All items`,async () => { 
-   const browser = await chromium.launch({headless:false}); 
+   const browser = await chromium.launch({headless:true}); 
    const browserContext = await browser.newContext(); 
    const page = await browserContext.newPage(); 
 
@@ -23,7 +23,7 @@ test(`Verify burger menu - All items`,async () => {
 }) 
 
 test(`Verify burger menu - About`,async () => { 
-   const browser = await chromium.launch({headless:false}); 
+   const browser = await chromium.launch({headless:true}); 
    const browserContext = await browser.newContext(); 
    const page = await browserContext.newPage(); 
 
