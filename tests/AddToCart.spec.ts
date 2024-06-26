@@ -3,7 +3,6 @@ import { login } from '../utilMethods/login';
 import productsPageSelectors from "../selectors/productsPageSelectors";
 import cartPageSelectors from "../selectors/cartPageSelectors";
 
-
 test(`Verify add to cart flow`,async () => { 
    const browser = await chromium.launch({headless:false}); 
    const browserContext = await browser.newContext(); 
