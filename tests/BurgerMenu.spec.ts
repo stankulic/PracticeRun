@@ -6,25 +6,6 @@ import mainPageSelectors from "../selectors/mainPageSelectors";
 import { logout } from "../utilMethods/logout";
 
 
-test(`Verify burger menu`,async () => { 
-
-   const browser = await chromium.launch({headless:false}); 
-   const browserContext = await browser.newContext(); 
-   const page = await browserContext.newPage(); 
-
-   login(page);
-
-   //reset app state:
-   //open the burger menu:
-   await page.getByRole('button', { name: 'Open Menu' }).click();
-   //await page.locator(burgerMenuSelectors.resetAppState).click();
-   //since Reset App State doesn't make any change on the page, verifying if visible only:
-   await expect(page.locator(burgerMenuSelectors.resetAppState)).toBeVisible();
-   //close the menu
-   await page.getByRole('button', { name: 'Close Menu' }).click();
- 
-}) 
-
 test(`Verify burger menu - All items`,async () => { 
 
    const browser = await chromium.launch({headless:false}); 
