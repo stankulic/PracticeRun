@@ -2,26 +2,19 @@ Test Automation Framework
 
  Overview
 This document provides an in-depth explanation of the test automation framework implemented using Playwright. 
-Contents
-1. Introduction	1
-2. Framework Structure	1
-3. Test Architecture	2
-Test Scripts	2
-Actions	2
-Selectors	2
-Data	2
-4. Design Patterns	2
-App Actions Design Pattern	2
-Data-Driven Testing	2
-5. Setup and Installation	3
-Prerequisites	3
-Installation	3
-9. Conclusion	4
+Content:
+1. Introduction
+2. Framework Structure
+3. Test Architecture
+4. Setup and Installation
+5. Running the tests:
+
 
  
  
 1. Introduction
 The test automation framework is designed to streamline and enhance the testing process for web applications. Cypress is utilized for its powerful capabilities and ease of use. The framework leverages modern design patterns to ensure scalability, maintainability, and reusability of test scripts.
+
  2. Framework Structure
 The framework is structured to separate concerns clearly, ensuring that each component has a single responsibility. The main components of the framework are:
 •	tests: Contain the test cases.
@@ -48,10 +41,10 @@ Selectors are centralized in a separate folder, per file, corresponding to an ap
 •	Playwright
 Installation:
 •	Install Visual Studio Code
-•	Install npm init playwright@latest
+•	Install npm init playwright@latest (select all default values)
 •	npx playwright install
 
- Running the tests:
+5. Running the tests:
 1. Clone the repository:
 •	git clone https://github.com/stankulic/task2
 2. Running Tests
