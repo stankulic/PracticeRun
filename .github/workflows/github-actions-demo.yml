@@ -3,18 +3,18 @@ run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
  
 jobs:
-Explore-GitHub-Actions:
+ Explore-GitHub-Actions:
    runs-on: ubuntu-latest
 
-    steps:
+   steps:
       - run: echo "checking out code repository"
       - name: Check out repository code
-      uses: actions/checkout@v4
+        uses: actions/checkout@v4
  
       - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'
+        uses: actions/setup-node@v2
+        with:
+         node-version: '16'
  
       - name: Install dependencies
         run: npm install
@@ -28,6 +28,5 @@ Explore-GitHub-Actions:
       - name: Upload Playwright report artifact
         uses: actions/upload-artifact@v2
         with:
-          name: playwright-report
-          path: playwright-report
- 
+         name: playwright-report
+         path: playwright-report
