@@ -1,32 +1,35 @@
 import { test, chromium, firefox, expect } from "@playwright/test"; 
 import CheckoutData from "../testData/CheckoutData.json"
-
 import { login } from '../utilMethods/login'; 
+import mainPageSelectors from "../selectors/mainPageSelectors";
+import cartPageSelectors from "../selectors/cartPageSelectors";
+import checkoutPageSelectors from "../selectors/chekoutPageSelectors";
 
 test(`Verify checkout flow`,async () => { 
 
    const browser = await chromium.launch({headless:false}); 
    const browserContext = await browser.newContext(); 
    const page = await browserContext.newPage(); 
-
    
    login(page);
-
-      
- 
-   await page.locator('[data-test="add-to-cart-sauce-labs-bike-light"]').click();
-   await page.locator('[data-test="shopping-cart-link"]').click();
-   await page.locator('[data-test="checkout"]').click();
-
-   await page.locator('[data-test="firstName"]').fill(CheckoutData.FirstName);
-   await page.locator('[data-test="lastName"]').fill(CheckoutData.LastName);
-   await page.locator('[data-test="postalCode"]').fill(CheckoutData.ZipCode);
-
-
-   await page.locator('[data-test="continue"]').click();
-   await page.locator('[data-test="finish"]').click();
-
-   //verify "Thank you for your order!"
    
-   await page.locator('[data-test="pony-express"]').click();
+   //add a product and go to checkout 
+   await page.locator(mainPageSelectors.addBikeLightButton).click();
+   await page.locator(mainPageSelectors.cartObject).click();
+   await page.locator(cartPageSelectors.checkoutButton).click();
+
+   //populate checkout data
+   await page.locator(checkoutPageSelectors.firstNameInput).fill(CheckoutData.FirstName);
+   await page.locator(checkoutPageSelectors.lastNameInput).fill(CheckoutData.LastName);
+   await page.locator(checkoutPageSelectors.zipCodeInput).fill(CheckoutData.ZipCode);
+
+   //finish the checkout
+   await page.locator(checkoutPageSelectors.continueButton).click();
+   await page.locator(checkoutPageSelectors.finishButton).click();
+
+   //verify label "Thank you for your order!":
+   await expect(page.locator(checkoutPageSelectors.thankYouLable)).toBeVisible();
+   
+   //go back to home page
+   await page.locator(checkoutPageSelectors.backHomeButton).click();
 }) 
