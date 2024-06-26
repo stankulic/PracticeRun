@@ -5,28 +5,29 @@ on: [push]
 jobs:
 Explore-GitHub-Actions:
    runs-on: ubuntu-latest
- 
+
     steps:
+      - run: echo "checking out code repository"
       - name: Check out repository code
-        uses: actions/checkout@v4
+      uses: actions/checkout@v4
  
-    - name: Set up Node.js
+      - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
         node-version: '16'
  
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
  
-    - name: Run Playwright tests
-      run: npx playwright test
+      - name: Run Playwright tests
+        run: npx playwright test
  
-    - name: Generate Playwright report
-      run: npx playwright show-report
+      - name: Generate Playwright report
+        run: npx playwright show-report
  
-    - name: Upload Playwright report artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: playwright-report
-        path: playwright-report
+      - name: Upload Playwright report artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: playwright-report
+          path: playwright-report
  
