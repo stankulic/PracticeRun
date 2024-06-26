@@ -50,9 +50,11 @@ Installation:
 2. Running Tests
 •	run the tests: npx playwright test
 •	run the tests in UI mode: npx playwright test --ui
-3. Report
-•	HTML Reporter generates the execution report. The report will be presented automatically if there are errors in the script, otherwise, the report may be generated as follows: 
-o	npx playwright show-report
+3. Reports
+•	In local: HTML Reporter generates the execution report. The report will be presented automatically if there are errors in the script, otherwise, the report may 
+be generated as follows: 
+    •	npx playwright show-report
+•	In GitHub: Navigate to a run and scroll down, the report is available for download at the bottom of the page.
 4. Directory Structure
 |-- PLAYWRIGHTPROJECT
     |-- selectors
