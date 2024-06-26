@@ -1,5 +1,5 @@
 import { test, chromium, firefox, expect } from "@playwright/test"; 
-import CheckoutData from "../testData/CheckoutData.json"
+import CheckoutData from "../testData/checkoutData.json"
 import { login } from '../utilMethods/login'; 
 import productsPageSelectors from "../selectors/productsPageSelectors";
 import cartPageSelectors from "../selectors/cartPageSelectors";
