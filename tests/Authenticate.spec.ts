@@ -5,7 +5,7 @@ import loginPageSelectors from "../selectors/loginPageSelectors";
 
 
 test(`Authenticate`,async () => {
-   const browser = await chromium.launch({headless:false}); 
+   const browser = await chromium.launch({headless:true}); 
    const browserContext = await browser.newContext(); 
    const page = await browserContext.newPage(); 
 
@@ -16,7 +16,7 @@ test(`Authenticate`,async () => {
 }) 
 
 test(`Authenticate incorrect password`,async () => {
-   const browser = await chromium.launch({headless:false}); 
+   const browser = await chromium.launch({headless:true}); 
    const browserContext = await browser.newContext(); 
    const page = await browserContext.newPage(); 
 

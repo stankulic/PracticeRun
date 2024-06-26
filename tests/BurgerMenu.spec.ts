@@ -36,7 +36,7 @@ test(`Verify burger menu - About`,async () => {
 }) 
 
 test(`Verify burger menu - Logout`,async () => { 
-   const browser = await chromium.launch({headless:false}); 
+   const browser = await chromium.launch({headless:true}); 
    const browserContext = await browser.newContext(); 
    const page = await browserContext.newPage(); 
 
@@ -48,7 +48,7 @@ test(`Verify burger menu - Logout`,async () => {
 }) 
 
 test(`Verify burger menu - Reset App State`,async () => { 
-   const browser = await chromium.launch({headless:false}); 
+   const browser = await chromium.launch({headless:true}); 
    const browserContext = await browser.newContext(); 
    const page = await browserContext.newPage(); 
 
