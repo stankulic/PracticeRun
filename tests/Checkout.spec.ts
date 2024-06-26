@@ -1,12 +1,11 @@
 import { test, chromium, firefox, expect } from "@playwright/test"; 
 import CheckoutData from "../testData/CheckoutData.json"
 import { login } from '../utilMethods/login'; 
-import mainPageSelectors from "../selectors/mainPageSelectors";
+import productsPageSelectors from "../selectors/productsPageSelectors";
 import cartPageSelectors from "../selectors/cartPageSelectors";
 import checkoutPageSelectors from "../selectors/chekoutPageSelectors";
 
 test(`Verify checkout flow`,async () => { 
-
    const browser = await chromium.launch({headless:false}); 
    const browserContext = await browser.newContext(); 
    const page = await browserContext.newPage(); 
@@ -14,8 +13,8 @@ test(`Verify checkout flow`,async () => {
    login(page);
    
    //add a product and go to checkout 
-   await page.locator(mainPageSelectors.addBikeLightButton).click();
-   await page.locator(mainPageSelectors.cartObject).click();
+   await page.locator(productsPageSelectors.addBikeLightButton).click();
+   await page.locator(productsPageSelectors.cartObject).click();
    await page.locator(cartPageSelectors.checkoutButton).click();
 
    //populate checkout data

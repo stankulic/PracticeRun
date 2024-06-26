@@ -1,11 +1,10 @@
 import { test, chromium, firefox } from "@playwright/test"; 
 import { login, loginIncorrectPass } from '../utilMethods/login'; 
-import mainPageSelectors from '../selectors/mainPageSelectors'
+import mainPageSelectors from '../selectors/productsPageSelectors'
 import loginPageSelectors from "../selectors/loginPageSelectors";
 
 
-test(`Authenticate`,async () => { 
-
+test(`Authenticate`,async () => {
    const browser = await chromium.launch({headless:false}); 
    const browserContext = await browser.newContext(); 
    const page = await browserContext.newPage(); 
@@ -16,8 +15,7 @@ test(`Authenticate`,async () => {
    await page.waitForSelector(mainPageSelectors.cartObject);
 }) 
 
-test(`Authenticate incorrect password`,async () => { 
-
+test(`Authenticate incorrect password`,async () => {
    const browser = await chromium.launch({headless:false}); 
    const browserContext = await browser.newContext(); 
    const page = await browserContext.newPage(); 

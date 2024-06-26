@@ -1,4 +1,4 @@
-type MainPageSelectors = {
+type ProductsPageSelectors = {
     cartObject: string;
     addBackpackButton: string;
     addBikeLightButton: string;
@@ -6,11 +6,11 @@ type MainPageSelectors = {
     productsLabel: string;
 };
 
-const mainPageSelectors: MainPageSelectors = {
+const productsPageSelectors: ProductsPageSelectors = {
     cartObject: '[data-test="shopping-cart-link"]',
     addBackpackButton: '[data-test="add-to-cart-sauce-labs-backpack"]',
     addBikeLightButton: '[data-test="add-to-cart-sauce-labs-bike-light"]',
     addFleeceJacketButton: '[data-test="add-to-cart-sauce-labs-fleece-jacket"]',
     productsLabel: '[data-test="title"]'
 }
-export default mainPageSelectors;
+export default productsPageSelectors;

@@ -2,12 +2,11 @@ import { test, chromium, firefox, expect } from "@playwright/test";
 import { login } from '../utilMethods/login'; 
 import burgerMenuSelectors from "../selectors/burgerMenuSelectors";
 import loginPageSelectors from "../selectors/loginPageSelectors";
-import mainPageSelectors from "../selectors/mainPageSelectors";
+import mainPageSelectors from "../selectors/productsPageSelectors";
 import { logout } from "../utilMethods/logout";
 
 
 test(`Verify burger menu - All items`,async () => { 
-
    const browser = await chromium.launch({headless:false}); 
    const browserContext = await browser.newContext(); 
    const page = await browserContext.newPage(); 
@@ -24,7 +23,6 @@ test(`Verify burger menu - All items`,async () => {
 }) 
 
 test(`Verify burger menu - About`,async () => { 
-
    const browser = await chromium.launch({headless:false}); 
    const browserContext = await browser.newContext(); 
    const page = await browserContext.newPage(); 
@@ -38,7 +36,6 @@ test(`Verify burger menu - About`,async () => {
 }) 
 
 test(`Verify burger menu - Logout`,async () => { 
-
    const browser = await chromium.launch({headless:false}); 
    const browserContext = await browser.newContext(); 
    const page = await browserContext.newPage(); 
@@ -51,7 +48,6 @@ test(`Verify burger menu - Logout`,async () => {
 }) 
 
 test(`Verify burger menu - Reset App State`,async () => { 
-
    const browser = await chromium.launch({headless:false}); 
    const browserContext = await browser.newContext(); 
    const page = await browserContext.newPage(); 

@@ -1,6 +1,6 @@
 import { test, chromium, firefox, expect } from "@playwright/test"; 
 import { login } from '../utilMethods/login'; 
-import mainPageSelectors from "../selectors/mainPageSelectors";
+import productsPageSelectors from "../selectors/productsPageSelectors";
 
 test(`Verify products`,async () => {      
 
@@ -10,5 +10,8 @@ test(`Verify products`,async () => {
 
    login(page);
 
-   await expect(page.locator(mainPageSelectors.productsLabel)).toBeVisible();
+   await expect(page.locator(productsPageSelectors.productsLabel)).toBeVisible();
+
+   //selecting one product:
+   await page.locator(productsPageSelectors.addBackpackButton).click();
 }) 

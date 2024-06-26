@@ -1,11 +1,10 @@
 import { test, chromium, firefox, expect } from "@playwright/test"; 
 import { login } from '../utilMethods/login'; 
-import mainPageSelectors from "../selectors/mainPageSelectors";
+import productsPageSelectors from "../selectors/productsPageSelectors";
 import cartPageSelectors from "../selectors/cartPageSelectors";
 
 
 test(`Verify add to cart flow`,async () => { 
-
    const browser = await chromium.launch({headless:false}); 
    const browserContext = await browser.newContext(); 
    const page = await browserContext.newPage(); 
@@ -13,12 +12,12 @@ test(`Verify add to cart flow`,async () => {
    login(page);
 
    //add 3 items to cart
-   await page.locator(mainPageSelectors.addBackpackButton).click();
-   await page.locator(mainPageSelectors.addBikeLightButton).click();
-   await page.locator(mainPageSelectors.addFleeceJacketButton).click();
+   await page.locator(productsPageSelectors.addBackpackButton).click();
+   await page.locator(productsPageSelectors.addBikeLightButton).click();
+   await page.locator(productsPageSelectors.addFleeceJacketButton).click();
 
    //navigate to cart
-   await page.locator(mainPageSelectors.cartObject).click();
+   await page.locator(productsPageSelectors.cartObject).click();
 
    //remove the items from the cart
    await page.locator(cartPageSelectors.removeBackpackButton).click();
