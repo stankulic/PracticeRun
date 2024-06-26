@@ -9,7 +9,6 @@ test(`Verify add to cart flow`,async () => {
    const page = await browserContext.newPage(); 
    
    login(page);
-
    //add 3 items to cart
    await page.locator(productsPageSelectors.addBackpackButton).click();
    await page.locator(productsPageSelectors.addBikeLightButton).click();
