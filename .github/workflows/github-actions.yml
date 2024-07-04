@@ -26,8 +26,8 @@ jobs:
       - name: Install Playwright
         run: npx playwright install
 
-      - name: Install dotenv
-        run: npm install dotenv --save
+      # - name: Install dotenv
+      #   run: npm install dotenv --save
 
       - name: Run Playwright tests
         run: npx playwright test
@@ -37,8 +37,3 @@ jobs:
         with:
          name: playwright-report
          path: playwright-report
-      
-      # - name: Load .env file
-      #   uses: dotnetv@v2
-      #    path: env
-      #    mode: local
