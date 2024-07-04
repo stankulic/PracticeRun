@@ -28,6 +28,8 @@ jobs:
 
       # - name: Install dotenv
       #   run: npm install dotenv --save
+        env:
+          file_path: env/.env.local
 
       - name: Run Playwright tests
         run: npx playwright test
@@ -38,5 +40,3 @@ jobs:
          name: playwright-report
          path: playwright-report
 
-        env:
-          file_path: env/.env.local
