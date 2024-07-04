@@ -14,9 +14,7 @@ jobs:
       - run: echo "checking out code repository"
       - name: Check out repository code
         uses: actions/checkout@v4
-      - name: Load .env file
-        uses: dotnetv@v
- 
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -39,3 +37,8 @@ jobs:
         with:
          name: playwright-report
          path: playwright-report
+      
+      - name: Load .env file
+        uses: dotnetv@v2
+         path: env
+         mode: local
