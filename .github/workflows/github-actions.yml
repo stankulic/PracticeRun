@@ -26,6 +26,9 @@ jobs:
       - name: Install Playwright
         run: npx playwright install
 
+      - name: Install dotenv
+        run: npm install dotenv --save
+
       - name: Run Playwright tests
         run: npx playwright test
  

@@ -43,6 +43,13 @@ Installation:
 •	Install Visual Studio Code
 •	Install npm init playwright@latest (select all default values)
 •	npx playwright install
+Environments:
+Available environments:
+•	local
+•	prod
+•	test
+•	uat
+To select the environment: "$env:ENV="test""
 
 5. Running the tests:
 1. Clone the repository:
