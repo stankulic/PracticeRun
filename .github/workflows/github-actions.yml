@@ -38,7 +38,7 @@ jobs:
          name: playwright-report
          path: playwright-report
       
-      - name: Load .env file
-        uses: dotnetv@v2
-         path: env
-         mode: local
+      # - name: Load .env file
+      #   uses: dotnetv@v2
+      #    path: env
+      #    mode: local
