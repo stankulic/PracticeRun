@@ -4,18 +4,8 @@ import mainPageSelectors from '../selectors/productsPageSelectors'
 import loginPageSelectors from "../selectors/loginPageSelectors";
 import loginPage from '../testData/loginPage.json'
 
-
 test(`Authenticate`,async () => {
- const browser = await chromium.launch({headless:true}); 
-
-import { test, chromium, firefox } from "@playwright/test"; 
-import { login, loginIncorrectPass } from '../utilMethods/login'; 
-import mainPageSelectors from '../selectors/productsPageSelectors'
-import loginPageSelectors from "../selectors/loginPageSelectors";
-
-
-test(`Authenticate`,async () => {
-   const browser = await chromium.launch({headless:false}); 
+   const browser = await chromium.launch({headless:true}); 
 
    const browserContext = await browser.newContext(); 
    const page = await browserContext.newPage(); 
@@ -35,7 +25,7 @@ test(`Authenticate incorrect password`,async () => {
 }) 
 
 test(`Authenticate incorrect password`,async () => {
-   const browser = await chromium.launch({headless:false}); 
+   const browser = await chromium.launch({headless:true}); 
 
    const browserContext = await browser.newContext(); 
    const page = await browserContext.newPage(); 

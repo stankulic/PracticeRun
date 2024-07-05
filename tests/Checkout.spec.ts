@@ -1,6 +1,5 @@
 import { test, chromium, firefox, expect } from "@playwright/test"; 
 import CheckoutData from "../testData/checkoutData.json"
-import CheckoutData from "../testData/CheckoutData.json"
 import { login } from '../utilMethods/login'; 
 import productsPageSelectors from "../selectors/productsPageSelectors";
 import cartPageSelectors from "../selectors/cartPageSelectors";
@@ -8,7 +7,6 @@ import checkoutPageSelectors from "../selectors/chekoutPageSelectors";
 
 test(`Verify checkout flow`,async () => { 
    const browser = await chromium.launch({headless:true}); 
-   const browser = await chromium.launch({headless:false}); 
    const browserContext = await browser.newContext(); 
    const page = await browserContext.newPage(); 
    

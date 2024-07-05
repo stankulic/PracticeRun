@@ -6,9 +6,6 @@ import cartPageSelectors from "../selectors/cartPageSelectors";
 
 test(`Verify add to cart flow`,async () => { 
    const browser = await chromium.launch({headless:true}); 
-
-test(`Verify add to cart flow`,async () => { 
-   const browser = await chromium.launch({headless:false}); 
    const browserContext = await browser.newContext(); 
    const page = await browserContext.newPage(); 
    

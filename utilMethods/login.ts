@@ -49,11 +49,3 @@ export async function loginIncorrectUserName(page: Page) {
     expect(page).toHaveTitle(mainPage.loginPageTitle);
 }
 
-
-// export async function loginIncorrectPass(page: Page) {
-//     await page.goto("https://www.saucedemo.com/");
-//     await page.locator(loginPageSelectors.userNameInput).fill(userCreds.user_name);
-//     await page.locator(loginPageSelectors.passwordInput).fill(userCreds.incorrect_password);
-//     await page.locator(loginPageSelectors.loginButton).click();
-// }
-
