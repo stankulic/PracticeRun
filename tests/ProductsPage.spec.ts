@@ -4,7 +4,7 @@ import productsPageSelectors from "../selectors/productsPageSelectors";
 
 test(`Verify products`,async () => {      
 
-   const browser = await chromium.launch({headless:false}); 
+   const browser = await chromium.launch({headless:true}); 
    const browserContext = await browser.newContext(); 
    const page = await browserContext.newPage(); 
 
