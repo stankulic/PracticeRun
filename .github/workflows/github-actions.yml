@@ -5,7 +5,8 @@ on: [push]
 jobs:
  Explore-GitHub-Actions:
    runs-on: ubuntu-latest
-   environment: prod
+   environment: "local"
+      run: echo " environment
 
    strategy:
      matrix:
