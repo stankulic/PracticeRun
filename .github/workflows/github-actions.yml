@@ -5,8 +5,6 @@ on: [push]
 jobs:
  Explore-GitHub-Actions:
    runs-on: ubuntu-latest
-   environment: "local"
-      run: echo " environment
 
    strategy:
      matrix:
@@ -30,6 +28,8 @@ jobs:
 
       - name: Run Playwright tests
         run: npx playwright test
+        env:
+          URL: ${{secrets.LOCAL}}
 
       - name: Upload Playwright report artifact
         uses: actions/upload-artifact@v2
